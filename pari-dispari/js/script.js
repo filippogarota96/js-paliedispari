@@ -21,11 +21,15 @@ var sceltaUtente = pariDispari()
 console.log( "L'utente ha scelto: " + sceltaUtente);
 // l'utente sceglie un numero
 
-var numeroUtente = parseInt(prompt('Scegli un numero da 1 a 5'));
-
-while(numeroUtente) {
-  if (numeroUtente != Math.floor(Math.random() * 6 + 1) && isNaN(numeroUtente)) {
-    console.log('inserire numero');
+var numeroUtente;
+var controllo = true;
+// validazione del numero utente
+while(controllo) {
+  numeroUtente = parseInt(prompt('Scegli un numero da 1 a 5'));
+  if ((numeroUtente > 5 || numeroUtente < 1)  || isNaN(numeroUtente)) {
+    console.log(numeroUtente);
+  } else {
+    controllo = false;
+    console.log( 'numero' , numeroUtente);
   }
-  numeroUtente = Math.floor(Math.random() * 6 + 1);
 }
