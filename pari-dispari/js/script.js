@@ -18,4 +18,14 @@ function pariDispari (odd, even) {
 }
 
 var sceltaUtente = pariDispari()
-console.log( "L'utente ha sclto: " + sceltaUtente);
+console.log( "L'utente ha scelto: " + sceltaUtente);
+// l'utente sceglie un numero
+
+var numeroUtente = parseInt(prompt('Scegli un numero da 1 a 5'));
+
+while(numeroUtente) {
+  if (numeroUtente != Math.floor(Math.random() * 6 + 1) && isNaN(numeroUtente)) {
+    console.log('inserire numero');
+  }
+  numeroUtente = Math.floor(Math.random() * 6 + 1);
+}
