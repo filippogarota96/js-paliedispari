@@ -23,6 +23,7 @@ console.log( "L'utente ha scelto: " + sceltaUtente);
 
 var numeroUtente;
 var controllo = true;
+
 // validazione del numero utente
 while(controllo) {
   numeroUtente = parseInt(prompt('Scegli un numero da 1 a 5'));
@@ -30,6 +31,39 @@ while(controllo) {
     console.log(numeroUtente);
   } else {
     controllo = false;
-    console.log( 'numero' , numeroUtente);
+    console.log("numero dell'utente" , numeroUtente);
   }
+}
+
+// creo una funzione per stabilire il numero del cpu
+
+function numberCpu (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+var randomNumber = numberCpu(1, 6);
+console.log('numero del computer' ,randomNumber);
+
+// faccio la somma dei due numeri e stabilisco se sono pari e dispari
+
+function sommaNumeri (user, cpu) {
+  var user = numeroUtente;
+  var cpu = randomNumber;
+  var sum = user + cpu;
+  if (sum % 2 == 0) {
+    return sum = 'pari';
+  } else {
+    return sum = 'dispari'
+  }
+}
+
+var somma = sommaNumeri()
+console.log( "la somma è", somma);
+
+// decido chi ha vinto
+
+if (somma == sceltaUtente ) {
+  console.log("L'utente ha vinto");
+} else {
+  console.log("il computer ha vinto");
 }
